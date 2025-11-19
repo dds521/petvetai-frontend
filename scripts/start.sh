@@ -50,7 +50,7 @@ fi
 
 # 检查后端服务是否运行（可选）
 if command -v curl &> /dev/null; then
-    API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8080}
+    API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:48080}
     if curl -s "${API_URL}/actuator/health" > /dev/null 2>&1; then
         echo "✅ 后端服务连接正常: ${API_URL}"
     else
@@ -62,7 +62,7 @@ fi
 
 echo "🚀 启动开发服务器..."
 echo "   前端地址: http://localhost:3000"
-echo "   后端 API: ${NEXT_PUBLIC_API_URL:-http://localhost:8080}"
+echo "   后端 API: ${NEXT_PUBLIC_API_URL:-http://localhost:48080}"
 echo ""
 echo "按 Ctrl+C 停止服务"
 echo ""

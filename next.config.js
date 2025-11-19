@@ -33,10 +33,11 @@ const nextConfig = {
   
   // 代理配置（可选，如果后端支持 CORS 可以不用）
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:48080';
     return [
       {
         source: '/api/:path*',
-        destination: process.env.NEXT_PUBLIC_API_URL + '/api/:path*',
+        destination: `${apiUrl}/api/:path*`,
       },
     ];
   },
