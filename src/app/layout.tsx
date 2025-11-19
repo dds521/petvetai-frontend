@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryProvider } from '@/components/providers/QueryProvider'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const queryClient = new QueryClient()
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial']
+})
 
 export const metadata: Metadata = {
-  title: 'PetVetAI - 宠物医疗 AI 助手',
-  description: 'AI 驱动的宠物健康咨询平台',
+  title: 'PetVetAI - AI 宠物医疗助手',
+  description: '您的 AI 宠物医疗助手，提供智能症状分析和健康建议',
 }
 
 export default function RootLayout({
@@ -20,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={inter.className}>
-        <QueryClientProvider client={queryClient}>
+        <QueryProvider>
           {children}
-        </QueryClientProvider>
+        </QueryProvider>
       </body>
     </html>
   )
