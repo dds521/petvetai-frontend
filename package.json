@@ -3,34 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:test": "next dev --env-file=.env.test",
-    "dev:uat": "next dev --env-file=.env.uat",
+    "dev": "next dev -p 3000",
+    "dev:test": "next dev -p 3000 --env-file=.env.test",
+    "dev:uat": "next dev -p 3000 --env-file=.env.uat",
     "build": "next build",
     "build:dev": "next build --env-file=.env.development",
     "build:test": "next build --env-file=.env.test",
     "build:uat": "next build --env-file=.env.uat",
     "build:prod": "next build --env-file=.env.production",
-    "start": "next start",
+    "start": "next start -p 3000",
     "start:prod": "next start -p 3000",
     "lint": "next lint",
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.56.2",
-    "lucide-react": "^0.462.0",
-    "next": "^14.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.0"
+    "lucide-react": "^0.462.0",
+    "next": "^16.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.0",
+    "unrs-resolver": "^1.11.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
+    "critters": "0.0.25",
     "eslint": "^8",
     "eslint-config-next": "^14.2.0",
     "postcss": "^8",
@@ -38,4 +40,3 @@
     "typescript": "^5"
   }
 }
-
